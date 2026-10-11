@@ -19,7 +19,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#journey">Journey</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a class="btn btn-small" href="#contact">Let's talk</a></li>
+          <li id="nav-testimonials" hidden><a href="#testimonials">Testimonials</a></li>
+          <li><a class="btn btn-small" href="https://api.leadconnectorhq.com/widget/bookings/meet-with-jude" target="_blank" rel="noopener">Book a call</a></li>
         </ul>
       </nav>
     </div>
@@ -35,8 +36,8 @@
           so you can focus on scaling, not stressing.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="#services">See what I build</a>
-          <a class="btn btn-ghost" href="#about">Get to know me</a>
+          <a class="btn" href="https://api.leadconnectorhq.com/widget/bookings/meet-with-jude" target="_blank" rel="noopener">Book a call</a>
+          <a class="btn btn-ghost" href="#services">See what I build</a>
         </div>
         <ul class="stats" aria-label="Highlights">
           <li><strong>4+ years</strong><span>helping business owners grow</span></li>
@@ -132,11 +133,19 @@
       </div>
     </section>
 
+    <section id="testimonials" class="section section-alt" hidden>
+      <div class="container">
+        <p class="eyebrow">Testimonials</p>
+        <h2>What clients say.</h2>
+        <div class="testimonials" id="testimonial-list"></div>
+      </div>
+    </section>
+
     <section id="contact" class="section cta">
       <div class="container cta-inner">
         <h2>Ready to stop stressing and start scaling?</h2>
         <p>Let's build the systems that do the heavy lifting for your business.</p>
-        <a class="btn btn-light" href="#top">Let's work together</a>
+        <a class="btn btn-light" href="https://api.leadconnectorhq.com/widget/bookings/meet-with-jude" target="_blank" rel="noopener">Book a call with me</a>
       </div>
     </section>
   </main>
@@ -147,8 +156,55 @@
     </div>
   </footer>
 
+  <script src="testimonials.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function renderTestimonials() {
+      if (typeof TESTIMONIALS === 'undefined' || !TESTIMONIALS.length) return;
+
+      var list = document.getElementById('testimonial-list');
+
+      TESTIMONIALS.forEach(function (t) {
+        var card = document.createElement('figure');
+        card.className = 'testimonial';
+
+        var quote = document.createElement('blockquote');
+        quote.textContent = '“' + t.quote + '”';
+
+        var caption = document.createElement('figcaption');
+
+        var avatar = document.createElement('span');
+        avatar.className = 'avatar';
+        avatar.setAttribute('aria-hidden', 'true');
+        avatar.textContent = (t.name || '?')
+          .split(/\s+/)
+          .map(function (part) { return part.charAt(0); })
+          .join('')
+          .slice(0, 2)
+          .toUpperCase();
+
+        var who = document.createElement('span');
+        who.className = 'who';
+        var name = document.createElement('strong');
+        name.textContent = t.name || '';
+        who.appendChild(name);
+        if (t.role) {
+          var role = document.createElement('span');
+          role.textContent = t.role;
+          who.appendChild(role);
+        }
+
+        caption.appendChild(avatar);
+        caption.appendChild(who);
+        card.appendChild(quote);
+        card.appendChild(caption);
+        list.appendChild(card);
+      });
+
+      document.getElementById('testimonials').hidden = false;
+      document.getElementById('nav-testimonials').hidden = false;
+    })();
   </script>
 </body>
 </html>

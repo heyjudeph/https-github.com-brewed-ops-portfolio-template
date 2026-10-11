@@ -5,8 +5,26 @@ helping business owners grow through smarter **websites, funnels, and automation
 
 ## Structure
 
-- `index.html` — page content (hero, about, journey, services, contact)
+- `index.html` — page content (hero, about, journey, services, testimonials, contact)
 - `styles.css` — styles, with automatic light and dark mode
+- `testimonials.js` — your client testimonials (the section stays hidden until you add one)
+
+## Adding testimonials
+
+Open `testimonials.js` and add an entry inside the square brackets for each testimonial:
+
+```js
+const TESTIMONIALS = [
+  {
+    quote: "What the client said about working with you.",
+    name: "Client Name",
+    role: "Founder, Company Name",
+  },
+];
+```
+
+`role` is optional. Separate entries with commas. Save, refresh, and the Testimonials
+section plus its menu link appear automatically.
 
 ## Run locally
 
