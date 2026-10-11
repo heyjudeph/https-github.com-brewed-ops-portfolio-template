@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react'
-import { ArrowUpRight, MapPin } from '@/components/slab'
+import { ArrowUpRight, MapPin, CalendarCheck } from '@/components/slab'
 import { profile } from '@/data/profile'
 
 /**
@@ -11,23 +11,23 @@ import { profile } from '@/data/profile'
  * The left column is a ladder, not a paragraph block: one display statement,
  * one line of context, then the four things you do - each carrying the marks
  * of the tools it is built with. The tools are the proof, so they are the
- * visual. Swap the marks below for your own (any square SVG/PNG in public/).
+ * visual (any square SVG/PNG in public/).
  */
 
-const N8N = { src: '/icons/ai/n8n.svg', name: 'n8n' }
-const ZAPIER = { src: '/icons/ai/zapier.svg', name: 'Zapier' }
-const DOCKER = { src: '/icons/ai/docker.svg', name: 'Docker' }
+const GHL = { src: '/icons/gohighlevel.png', name: 'GoHighLevel' }
+const ZAPIER = { src: '/icons/tools/zapier-color.svg', name: 'Zapier' }
+const HUBSPOT = { src: '/icons/tools/hubspot-color.svg', name: 'HubSpot' }
+const SALESFORCE = { src: '/icons/tools/salesforce.svg', name: 'Salesforce' }
+const WORDPRESS = { src: '/icons/tools/wordpress-color.svg', name: 'WordPress' }
+const SQUARESPACE = { src: '/icons/tools/squarespace-color.svg', name: 'Squarespace' }
+const SHOPIFY = { src: '/icons/tools/shopify-color.svg', name: 'Shopify' }
+const KAJABI = { src: '/icons/tools/kajabi.svg', name: 'Kajabi' }
+const CHATGPT = { src: '/icons/openai.svg', name: 'ChatGPT' }
 const CLAUDE = { src: '/icons/ai/claude-color.svg', name: 'Claude' }
-const CODEX = { src: '/icons/ai/codex.svg', name: 'Codex' }
-const GLM = { src: '/icons/ai/zhipu.svg', name: 'GLM' }
-const QWEN = { src: '/icons/ai/qwen.svg', name: 'Qwen' }
-const HERMES = { src: '/icons/ai/hermes.svg', name: 'Hermes' }
-const NAMECHEAP = { src: '/icons/ai/namecheap.svg', name: 'Namecheap' }
-const CLOUDFLARE = { src: '/icons/ai/cloudflare.svg', name: 'Cloudflare' }
-const GITHUB = { src: '/icons/ai/github.svg', name: 'GitHub' }
 const GWS = { src: '/icons/googleworkspace.svg', name: 'Google Workspace' }
+const CLICKUP = { src: '/icons/tools/clickup-color.svg', name: 'ClickUp' }
 const SLACK = { src: '/icons/ai/slack-color.svg', name: 'Slack' }
-const FIREFLIES = { src: '/icons/ai/fireflies.png', name: 'Fireflies' }
+const CALENDLY = { src: '/icons/tools/calendly-color.svg', name: 'Calendly' }
 
 type Capability = {
   index: string
@@ -38,23 +38,23 @@ type Capability = {
 const CAPABILITIES: Capability[] = [
   {
     index: '01',
-    title: 'Your role 1',
-    marks: [N8N, ZAPIER, DOCKER],
+    title: 'CRM setup and GHL automations',
+    marks: [GHL, ZAPIER, HUBSPOT, SALESFORCE],
   },
   {
     index: '02',
-    title: 'Your role 2',
-    marks: [CLAUDE, CODEX, GLM, QWEN, HERMES],
+    title: 'Websites, funnels and landing pages',
+    marks: [WORDPRESS, SQUARESPACE, SHOPIFY, KAJABI],
   },
   {
     index: '03',
-    title: 'Your role 3',
-    marks: [CLAUDE, CODEX, NAMECHEAP, CLOUDFLARE, GITHUB],
+    title: 'AI chat agents',
+    marks: [CHATGPT, CLAUDE],
   },
   {
     index: '04',
-    title: 'Your role 4',
-    marks: [GWS, SLACK, FIREFLIES],
+    title: 'Operations and admin support',
+    marks: [GWS, CLICKUP, SLACK, CALENDLY],
   },
 ]
 
@@ -67,24 +67,21 @@ export default function AboutGrid() {
           {`Hi, I’m ${profile.firstName}.`}
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you do.
+          Web developer and GHL automation specialist, helping business owners scale, not stress.
         </p>
       </header>
 
       <div className="home__glass agrid__glass">
         <div className="agrid__copy">
           <p className="agrid__lead">
-            Your big statement goes here, in one or two lines.
-            <span> A softer second half that finishes the thought.</span>
+            A builder at heart, a digital nomad by choice.
+            <span> I build the systems that do the heavy lifting.</span>
           </p>
 
           <p className="agrid__note">
-            <strong>Your company name</strong>, and{' '}
-            <a className="agrid__link" href="#">
-              your product
-            </a>{' '}
-            - PLACEHOLDER - tell me what to put here: two sentences on your company, what
-            you sell or build, and who it is for.
+            <strong>From the Philippines, with a degree in Information Technology.</strong> I started
+            in the BPO industry in 2017, went independent in 2020, and for over four years I have
+            helped business owners grow through smarter websites, funnels, and automations.
           </p>
 
           <ul className="agrid__caps" role="list">
@@ -113,11 +110,11 @@ export default function AboutGrid() {
           <div className="agrid__bar">
             <span className="agrid__cell">
               <span className="agrid__cell-mark agrid__cell-mark--img">
-                <img src="/placeholders/badge.svg" alt="" loading="lazy" decoding="async" />
+                <img src="/me/six-sigma-white-belt.svg" alt="" loading="lazy" decoding="async" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Credential name</span>
-                <span className="agrid__cell-meta">Credential ID</span>
+                <span className="agrid__cell-title">Six Sigma White Belt</span>
+                <span className="agrid__cell-meta">Process improvement</span>
               </span>
             </span>
 
@@ -127,17 +124,17 @@ export default function AboutGrid() {
               </span>
               <span className="agrid__cell-copy">
                 <span className="agrid__cell-title">{profile.location}</span>
-                <span className="agrid__cell-meta">Timezone · working hours</span>
+                <span className="agrid__cell-meta">Remote, independent since 2020</span>
               </span>
             </span>
 
-            <a className="agrid__cell agrid__cell--wide" href="#">
-              <span className="agrid__cell-mark agrid__cell-mark--plain">
-                <img src="/placeholders/logo.svg" alt="" loading="lazy" decoding="async" />
+            <a className="agrid__cell agrid__cell--wide" href={profile.bookingUrl} target="_blank" rel="noopener noreferrer">
+              <span className="agrid__cell-mark">
+                <CalendarCheck size={16} weight="fill" aria-hidden="true" />
               </span>
               <span className="agrid__cell-copy">
-                <span className="agrid__cell-title">Community or affiliation</span>
-                <span className="agrid__cell-meta">Your role there</span>
+                <span className="agrid__cell-title">Book a call</span>
+                <span className="agrid__cell-meta">Pick a time on my calendar</span>
               </span>
               <ArrowUpRight className="agrid__cell-go" size={15} weight="bold" aria-hidden="true" />
             </a>
@@ -146,8 +143,8 @@ export default function AboutGrid() {
 
         <div className="agrid__portrait">
           <img
-            src="/avatar.svg"
-            alt="Portrait placeholder"
+            src={profile.hero.portraitSrc}
+            alt={profile.hero.portraitAlt}
             loading="eager"
             decoding="async"
             width={400}

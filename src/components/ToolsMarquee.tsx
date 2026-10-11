@@ -4,7 +4,7 @@ import { useMemo } from 'react'
  * ToolsMarquee
  *
  * Horizontally scrolling strip of brand logos + labels for the tools you work with.
- * PLACEHOLDER - swap the list below for your own tools (icons live in public/icons/).
+ * The tools you work with (icons live in public/icons/ and public/icons/tools/).
  * The strip lives on the cream shader page, NOT inside a dark section.
  *
  * Implementation notes:
@@ -15,8 +15,8 @@ import { useMemo } from 'react'
  *     1. Single-color simple-icons SVGs (.svg) are rendered as CSS masks tinted
  *        via a per-item `--brand-color` custom property. This lets us ship one
  *        black-shape file per brand and paint it with the brand color.
- *     2. Multi-color brand marks (PNG or multi-color SVG - GoHighLevel,
- *        Lightspeed, Claude Code, VS Code, Google Workspace) are rendered as
+ *     2. Multi-color brand marks (PNG or multi-color SVG - GoHighLevel, Claude,
+ *        Salesforce, Canva, Photoshop, Google Workspace) are rendered as
  *        raw `<img>` tags because gradients/layered fills cannot be reduced to
  *        a single silhouette.
  *   The renderer picks the mode by whether a `color` is set: color -> mask,
@@ -38,17 +38,25 @@ type Tool = {
 }
 
 export const tools: Tool[] = [
-  { name: 'Claude Code',          iconPath: '/icons/claude-code-logo.png' },
-  { name: 'Codex',                iconPath: '/icons/codex.svg',           color: '#000000' },
-  { name: 'Cursor',               iconPath: '/icons/cursor.svg',          color: '#0F172A' },
-  { name: 'Hermes AI',            iconPath: '/icons/nousresearch.svg',    color: '#18181B' },
-  { name: 'VS Code',              iconPath: '/icons/vscode.svg' },
   { name: 'GoHighLevel',          iconPath: '/icons/gohighlevel.png' },
-  { name: 'Lightspeed X-Series',  iconPath: '/icons/lightspeed.png' },
+  { name: 'Zapier',               iconPath: '/icons/tools/zapier.svg',      color: '#FF4F00' },
+  { name: 'HubSpot',              iconPath: '/icons/tools/hubspot.svg',     color: '#FF7A59' },
+  { name: 'Salesforce',           iconPath: '/icons/tools/salesforce.svg' },
+  { name: 'ClickUp',              iconPath: '/icons/tools/clickup.svg',     color: '#7B68EE' },
+  { name: 'Calendly',             iconPath: '/icons/tools/calendly.svg',    color: '#006BFF' },
+  { name: 'WordPress',            iconPath: '/icons/tools/wordpress.svg',   color: '#21759B' },
+  { name: 'Squarespace',          iconPath: '/icons/tools/squarespace.svg', color: '#151515' },
+  { name: 'Shopify',              iconPath: '/icons/tools/shopify.svg',     color: '#7AB55C' },
+  { name: 'Kajabi',               iconPath: '/icons/tools/kajabi.svg' },
+  { name: 'GoDaddy',              iconPath: '/icons/tools/godaddy.svg',     color: '#1BDBDB' },
+  { name: 'Canva',                iconPath: '/icons/tools/canva.svg' },
+  { name: 'Photoshop',            iconPath: '/icons/tools/photoshop.svg' },
   { name: 'Google Workspace',     iconPath: '/icons/googleworkspace.svg' },
-  { name: 'Zendesk',              iconPath: '/icons/zendesk.svg',         color: '#03363D' },
-  { name: 'Intercom',             iconPath: '/icons/intercom.svg',        color: '#1F8DED' },
-  { name: 'Slack',                iconPath: '/icons/slack.svg',           color: '#611F69' },
+  { name: 'Slack',                iconPath: '/icons/slack.svg',             color: '#611F69' },
+  { name: 'ChatGPT',              iconPath: '/icons/openai.svg',            color: '#151515' },
+  { name: 'Claude',               iconPath: '/icons/ai/claude-color.svg' },
+  { name: 'BudHerd',              iconPath: '/icons/tools/budherd.svg' },
+  { name: 'MasterControl',        iconPath: '/icons/tools/mastercontrol.svg' },
 ]
 
 export default function ToolsMarquee() {

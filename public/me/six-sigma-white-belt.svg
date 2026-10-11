@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- A plain credential seal, not an issuer logo. Swap in your certificate's badge if you have one. -->
+  <circle cx="60" cy="60" r="56" fill="#151515"/>
+  <circle cx="60" cy="60" r="49" fill="none" stroke="#C7F36B" stroke-width="2" stroke-dasharray="3 4"/>
+  <text x="60" y="58" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="34" font-weight="700" fill="#C7F36B">6σ</text>
+  <text x="60" y="76" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.2" fill="#F5F3ED">WHITE BELT</text>
+</svg>

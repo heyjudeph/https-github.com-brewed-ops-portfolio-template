@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { ArrowUpRight } from '@/components/slab'
 import { profile } from '@/data/profile'
 import ToolsMarquee from './ToolsMarquee'
@@ -45,10 +44,10 @@ export default function Home() {
           </h1>
 
           {!phone && (
-            <Link className="home__cta" to="/contact">
-              Get in touch
+            <a className="home__cta" href={profile.bookingUrl} target="_blank" rel="noopener noreferrer">
+              Book a call
               <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
-            </Link>
+            </a>
           )}
         </div>
 

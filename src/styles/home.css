@@ -51,6 +51,10 @@
 
 @media (min-width: 1100px) {
   .home__line { white-space: nowrap; }
+  /* Sized to the space beside the CTA: the panel is the viewport minus the
+     rail, its gutters and the button, and the headline (39 characters) runs
+     about 19 times its font size wide. Keep boot.css's copy identical. */
+  .home__title { font-size: clamp(24px, calc((92vw - 562px) / 19), 72px); }
 }
 
 .home__cta {
@@ -69,7 +73,7 @@
   transition: transform var(--dur-med) var(--ease-spring),
               background var(--dur-fast) var(--ease-out);
 }
-.home__cta svg { color: var(--orange); }
+.home__cta svg { color: var(--orange-ink); }
 .home__cta:hover { transform: translateY(-2px); }
 
 /* One line, from 1400px up.
@@ -130,21 +134,21 @@
     linear-gradient(100deg,
       rgba(255, 255, 255, 0.97) 0%,
       rgba(255, 255, 255, 0.93) 42%,
-      rgba(219, 231, 255, 0.95) 76%,
-      rgba(186, 209, 255, 0.96) 100%);
+      rgba(238, 250, 214, 0.95) 76%,
+      rgba(220, 245, 170, 0.96) 100%);
   box-shadow:
     inset 0 0 0 1px var(--line),
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 30px 70px -40px rgba(6, 12, 26, 0.5);
+    0 30px 70px -40px rgba(10, 10, 10, 0.5);
 }
 [data-theme='dark'] .home__glass {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 38%),
     linear-gradient(100deg,
-      rgba(16, 24, 42, 0.96) 0%,
-      rgba(16, 26, 48, 0.94) 42%,
-      rgba(18, 40, 96, 0.94) 76%,
-      rgba(24, 56, 140, 0.93) 100%);
+      rgba(28, 28, 28, 0.96) 0%,
+      rgba(28, 28, 28, 0.94) 42%,
+      rgba(30, 30, 30, 0.94) 76%,
+      rgba(21, 21, 21, 0.93) 100%);
   box-shadow:
     inset 0 0 0 1px var(--line),
     inset 0 1px 0 rgba(255, 255, 255, 0.08),

@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { X } from '@/components/slab'
+import { X, ArrowUpRight } from '@/components/slab'
 import type { Funnel } from '@/data/funnels'
 
 /**
  * The in-page funnel preview: a browser-chrome dialog that iframes the real
- * page so a visitor never leaves the portfolio.
+ * page so a visitor never leaves the portfolio. Client pages with a `shot`
+ * show their full-page screenshot instead (most live sites refuse to be
+ * framed), with a button out to the live page.
  *
  * It lives here rather than inside Funnels because two surfaces open it now -
  * the Projects view's full section and the reel on Home. One dialog, one focus
@@ -68,10 +70,22 @@ export function useFunnelModal() {
               <span className="funnels__modal-light funnels__modal-light--green" />
             </div>
             <div className="funnels__modal-url" aria-hidden="true">
-              <span className="funnels__modal-url-scheme">yoursite.com</span>
-              <span className="funnels__modal-url-path">{fullSrc(funnel)}</span>
+              {funnel.url ? (
+                <span className="funnels__modal-url-scheme">{funnel.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')}</span>
+              ) : (
+                <>
+                  <span className="funnels__modal-url-scheme">yoursite.com</span>
+                  <span className="funnels__modal-url-path">{fullSrc(funnel)}</span>
+                </>
+              )}
             </div>
             <div className="funnels__modal-actions">
+              {funnel.url && (
+                <a className="funnels__modal-visit" href={funnel.url} target="_blank" rel="noopener noreferrer">
+                  Visit site
+                  <ArrowUpRight weight="bold" size={14} aria-hidden="true" />
+                </a>
+              )}
               <button
                 ref={closeRef}
                 type="button"
@@ -83,12 +97,18 @@ export function useFunnelModal() {
               </button>
             </div>
           </div>
-          <iframe
-            className="funnels__modal-iframe"
-            src={fullSrc(funnel)}
-            title={funnel.label}
-            sandbox="allow-same-origin allow-forms allow-scripts allow-popups"
-          />
+          {funnel.shot ? (
+            <div className="funnels__modal-shot" tabIndex={0}>
+              <img src={funnel.shot} alt={`${funnel.label} website, full page`} decoding="async" />
+            </div>
+          ) : (
+            <iframe
+              className="funnels__modal-iframe"
+              src={fullSrc(funnel)}
+              title={funnel.label}
+              sandbox="allow-same-origin allow-forms allow-scripts allow-popups"
+            />
+          )}
         </div>
       </div>,
       document.body,

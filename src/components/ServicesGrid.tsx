@@ -1,20 +1,16 @@
 import type { CSSProperties } from 'react'
-import { MagnetStraight, Timer, Trophy, CheckCircle } from '@/components/slab'
+import { MagnifyingGlass, FlowArrow, RocketLaunch, CheckCircle } from '@/components/slab'
 import type { Icon } from '@/components/slab'
 import Autopilot, { TOOLS } from '@/components/Autopilot'
 
 /**
  * ServicesGrid - the Services view on one glass sheet.
  *
- * Three bands, top to bottom: your three-step method (on a dark plate so it
- * is the first thing the eye lands on), the five services as cards that carry
- * the marks of what each one is built with, and the live automation demo
- * scaled into whatever height is left. Same object language as Home and
- * Projects: the glass, the bento card, plated marks, orange for the index
- * and the accent.
- *
- * Every string below is a PLACEHOLDER. Replace it, or hand this file to your
- * AI assistant and tell it what to put in each spot.
+ * Three bands, top to bottom: the wagi formula (on a dark plate so it is the
+ * first thing the eye lands on), the five services as cards that carry the
+ * marks of what each one is built with, and the live automation demo scaled
+ * into whatever height is left. Same object language as Home and Projects:
+ * the glass, the bento card, plated marks, the accent for the index.
  */
 
 /* ---------- The method ---------- */
@@ -30,42 +26,42 @@ type Stage = {
 const STAGES: Stage[] = [
   {
     index: '01',
-    label: 'Step 1',
-    body: 'PLACEHOLDER - one line on what happens in this step.',
-    Icon: MagnetStraight,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3', 'Tag 4'],
+    label: 'Audit',
+    body: 'I map your funnel, CRM and follow-up to find where leads leak and time gets wasted.',
+    Icon: MagnifyingGlass,
+    chips: ['Funnel review', 'CRM check', 'Lead leaks', 'Tool stack'],
   },
   {
     index: '02',
-    label: 'Step 2',
-    body: 'PLACEHOLDER - one line on what happens in this step.',
-    Icon: Timer,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3'],
+    label: 'Automate',
+    body: 'I build the pipelines, workflows and pages that capture, nurture and book for you.',
+    Icon: FlowArrow,
+    chips: ['Workflows', 'Pipelines', 'Email & SMS'],
   },
   {
     index: '03',
-    label: 'Step 3',
-    body: 'PLACEHOLDER - one line on the result the client gets.',
-    Icon: Trophy,
-    chips: ['Tag 1', 'Tag 2', 'Tag 3'],
+    label: 'Accelerate',
+    body: 'You get more booked calls and less admin, with a system that scales as you grow.',
+    Icon: RocketLaunch,
+    chips: ['Booked calls', 'Less admin', 'Room to scale'],
   },
 ]
 
 /* ---------- The services ---------- */
 
-// Example tool marks from /public/icons. Swap for the tools you actually use.
+// Tool marks from /public/icons: what each service is built with.
 const GHL = '/icons/gohighlevel.png'
-const REACT = '/icons/ai/react.svg'
-const TAILWIND = '/icons/ai/tailwindcss.svg'
-const VITE = '/icons/ai/vite.svg'
-const CLOUDFLARE = '/icons/ai/cloudflare.svg'
-const N8N = '/icons/ai/n8n.svg'
+const HUBSPOT = '/icons/tools/hubspot-color.svg'
+const SALESFORCE = '/icons/tools/salesforce.svg'
+const KAJABI = '/icons/tools/kajabi.svg'
+const CANVA = '/icons/tools/canva.svg'
+const ZAPIER = '/icons/tools/zapier-color.svg'
+const CALENDLY = '/icons/tools/calendly-color.svg'
+const WORDPRESS = '/icons/tools/wordpress-color.svg'
+const SQUARESPACE = '/icons/tools/squarespace-color.svg'
+const SHOPIFY = '/icons/tools/shopify-color.svg'
 const OPENAI = '/icons/openai.svg'
-const GWS = '/icons/googleworkspace.svg'
-const SLACK = '/icons/slack.svg'
-const CLAUDE_CODE = '/icons/claude-code-logo.png'
-const EXPO = '/icons/ai/expo.svg'
-const CHROME = '/icons/ai/googlechrome.svg'
+const CLAUDE = '/icons/ai/claude-color.svg'
 
 type Service = {
   index: string
@@ -76,49 +72,46 @@ type Service = {
   bullets: string[]
 }
 
-const BULLETS = ['PLACEHOLDER benefit 1', 'PLACEHOLDER benefit 2', 'PLACEHOLDER benefit 3']
-const SERVICE_DESC = 'PLACEHOLDER - one line on this service.'
-
 const SERVICES: Service[] = [
   {
     index: '01',
-    title: 'Service One',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, REACT, TAILWIND],
-    bullets: BULLETS,
+    title: 'CRM Setup',
+    description: 'A CRM that knows where every lead is and what happens next.',
+    chip: 'Foundation',
+    logos: [GHL, HUBSPOT, SALESFORCE],
+    bullets: ['Pipelines and stages', 'Tags, fields and lead sources', 'Clean data you can trust'],
   },
   {
     index: '02',
-    title: 'Service Two',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, N8N, OPENAI],
-    bullets: BULLETS,
+    title: 'Funnels & Landing Pages',
+    description: 'Opt-ins, webinar pages and sales flows that turn clicks into leads.',
+    chip: 'Lead gen',
+    logos: [GHL, KAJABI, CANVA],
+    bullets: ['Opt-in and webinar pages', 'Booking and thank-you flows', 'Built to convert on mobile'],
   },
   {
     index: '03',
-    title: 'Service Three',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [GHL, GWS, SLACK],
-    bullets: BULLETS,
+    title: 'GHL Automations',
+    description: 'Follow-ups, reminders and handoffs that run without you.',
+    chip: 'Follow-up',
+    logos: [GHL, ZAPIER, CALENDLY],
+    bullets: ['Email and SMS nurture', 'Booking confirmations and reminders', 'Tool-to-tool integrations'],
   },
   {
     index: '04',
-    title: 'Service Four',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [REACT, VITE, CLOUDFLARE],
-    bullets: BULLETS,
+    title: 'Websites',
+    description: 'Fast, clean, conversion-minded websites that represent your brand.',
+    chip: 'Presence',
+    logos: [WORDPRESS, SQUARESPACE, SHOPIFY],
+    bullets: ['Design and build', 'Mobile-first and fast', 'Easy for you to update'],
   },
   {
     index: '05',
-    title: 'Service Five',
-    description: SERVICE_DESC,
-    chip: 'PLACEHOLDER',
-    logos: [CLAUDE_CODE, EXPO, CHROME],
-    bullets: BULLETS,
+    title: 'AI Chat Agents',
+    description: 'Chat agents that answer questions and book calls around the clock.',
+    chip: '24/7',
+    logos: [GHL, OPENAI, CLAUDE],
+    bullets: ['Trained on your offers and FAQs', 'Qualifies and books leads', 'Hands off to you when needed'],
   },
 ]
 
@@ -143,10 +136,10 @@ export default function ServicesGrid() {
       <header className="pgrid__head">
         <span className="pgrid__eyebrow">Services</span>
         <h1 className="pgrid__title" id="services-title">
-          Your services headline, in one short line.
+          Systems that capture, nurture and close.
         </h1>
         <p className="pgrid__lede">
-          PLACEHOLDER - tell me what to put here: one line on what you offer.
+          Five ways I help coaches, agencies and service businesses grow without adding more hours.
         </p>
       </header>
 
@@ -155,14 +148,14 @@ export default function ServicesGrid() {
             in order on the right with a signal running them. */}
         <div className="sgrid__method" aria-labelledby="method-title">
           <div className="sgrid__method-copy">
-            <span className="sgrid__method-eyebrow">Your Method</span>
+            <span className="sgrid__method-eyebrow sgrid__method-eyebrow--name">the wagi formula</span>
             <h2 className="sgrid__method-title" id="method-title">
-              One. Two. Three.
+              Audit. Automate. Accelerate.
               <br />
-              <span>Your method, in three steps.</span>
+              <span>Three steps to a business that runs itself.</span>
             </h2>
             <p className="sgrid__method-sub">
-              PLACEHOLDER - one sentence on why your method works.
+              Fix the leaks first, automate what works, then scale it. No guesswork, no wasted builds.
             </p>
           </div>
 
@@ -191,8 +184,8 @@ export default function ServicesGrid() {
         {/* Five cards, each carrying the marks of what it is built with. */}
         <div className="sgrid__offers">
           <div className="sgrid__offers-head">
-            <h2 className="sgrid__offers-title">Your services, listed.</h2>
-            <p className="sgrid__offers-sub">PLACEHOLDER - one short nudge.</p>
+            <h2 className="sgrid__offers-title">What I build.</h2>
+            <p className="sgrid__offers-sub">Not sure where to start? The audit tells you.</p>
           </div>
           <ul className="bento sgrid__services" role="list">
             {SERVICES.map((s) => (
@@ -225,9 +218,9 @@ export default function ServicesGrid() {
           <header className="sgrid__flow-head">
             <div className="sgrid__flow-copy">
               <span className="sgrid__flow-eyebrow">Live automation</span>
-              <h2 className="sgrid__flow-title">Your automation headline.</h2>
+              <h2 className="sgrid__flow-title">From opt-in to booked call.</h2>
               <p className="sgrid__flow-sub">
-                PLACEHOLDER - tell me what to put here: one sentence on what this example automation does for a client.
+                A new lead opts in for a coaching client, gets tagged and added to the CRM pipeline, then a nurture sequence of emails and texts pushes them to book a strategy call. Once they book, they get a confirmation and automatic reminders before the call.
               </p>
             </div>
             <ul className="sgrid__flow-tools" role="list" aria-label="Tools that power this flow">

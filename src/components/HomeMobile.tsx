@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
-import { SealCheck, CaretRight, Play, Stack, Coffee } from '@/components/slab'
+import { SealCheck, CaretRight, Quotes, Stack, CalendarCheck } from '@/components/slab'
 import { profile } from '@/data/profile'
+import { TESTIMONIALS } from '@/data/testimonials'
 import QuickMenu from './QuickMenu'
 
 /**
@@ -11,7 +12,7 @@ import QuickMenu from './QuickMenu'
  *   HomeStats    three proof facts (profile.stats), each named by a glyph so
  *                it reads at a glance
  *   HomeExplore  one shelf card per rail view in a snap row, then the first
- *                testimonial as a video stage
+ *                written testimonial
  */
 
 export function HomeProfile() {
@@ -47,12 +48,14 @@ export function HomeStats() {
 }
 
 const TILES = [
-  { n: '01', label: 'Projects', to: '/projects', title: 'PLACEHOLDER - projects headline', desc: 'Tell me what to put here.', img: '/placeholders/project-1.jpg' },
-  { n: '02', label: 'Services', to: '/services', title: 'PLACEHOLDER - services headline', desc: 'Tell me what to put here.', Icon: Stack },
-  { n: '03', label: 'Showcase', to: '/showcase', title: 'PLACEHOLDER - your flagship', desc: 'Tell me what to put here.', Icon: Coffee, accent: true },
-  { n: '04', label: 'Testimonials', to: '/testimonials', title: 'PLACEHOLDER - testimonials headline', desc: 'Tell me what to put here.', img: '/placeholders/testimonial-1.jpg' },
-  { n: '05', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'PLACEHOLDER - one line about you.', img: profile.avatarSrc },
+  { n: '01', label: 'Projects', to: '/projects', title: 'Websites and funnels that do the selling', desc: 'Client sites for agencies, coaches and experts.', img: '/home/samples-3-second-media.jpeg' },
+  { n: '02', label: 'Services', to: '/services', title: 'CRM, funnels, automations, websites, AI agents', desc: 'Audit. Automate. Accelerate.', Icon: Stack },
+  { n: '03', label: 'Book a call', to: '/contact', title: 'Your business could be next', desc: 'Pick a time that works for you.', Icon: CalendarCheck, accent: true },
+  { n: '04', label: 'Testimonials', to: '/testimonials', title: 'What 40+ clients say', desc: 'Founders and CEOs I build for.', Icon: Quotes },
+  { n: '05', label: 'About', to: '/about', title: `Hi, I'm ${profile.firstName}.`, desc: 'IT graduate, ex-BPO, building systems since 2020.', img: profile.avatarSrc },
 ] as const
+
+const FEATURED = TESTIMONIALS[0]
 
 export function HomeExplore() {
   return (
@@ -88,15 +91,13 @@ export function HomeExplore() {
           </Link>
         </h2>
       </div>
-      <Link to="/testimonials" className="hproof" aria-label="Client testimonial. PLACEHOLDER - a one-line teaser for your best testimonial.">
-        <span className="hproof__stage">
-          <img src="/placeholders/testimonial-1.jpg" alt="" loading="lazy" />
-          <span className="hproof__play" aria-hidden="true"><Play size={20} weight="fill" /></span>
-          <span className="hproof__dur" aria-hidden="true">0:00</span>
-        </span>
+      <Link to="/testimonials" className="hproof hproof--quote" aria-label={`Testimonial from ${FEATURED.name}, ${FEATURED.role}`}>
         <span className="hproof__copy">
-          <span className="hproof__title">PLACEHOLDER - tell me what to put here: a one-line teaser for your best testimonial.</span>
-          <span className="hproof__meta">PLACEHOLDER - client role</span>
+          <Quotes size={22} weight="fill" className="hproof__mark" aria-hidden="true" />
+          <span className="hproof__title">{FEATURED.quote}</span>
+          <span className="hproof__meta">
+            {FEATURED.name} · {FEATURED.role}
+          </span>
         </span>
       </Link>
     </>

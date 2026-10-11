@@ -2,15 +2,13 @@
  * YOUR IDENTITY - start here.
  *
  * Everything that says who you are lives in this file: name, handle, photo,
- * socials, email and the Home headline. Every value below is a PLACEHOLDER.
- * Replace the text, or hand this file to your AI assistant and tell it what
- * to put in each field.
+ * socials, email, booking link and the Home headline.
  *
  * Page-specific copy (projects, services, testimonials, FAQs) lives in the
  * other files in src/data/ and at the top of each view component.
  */
 
-import { Briefcase, SealCheck, Clock, type Icon } from '@/components/slab'
+import { Briefcase, UsersThree, Clock, type Icon } from '@/components/slab'
 
 export type SocialLink = {
   label: string
@@ -33,6 +31,8 @@ export type Profile = {
   /** Tooltip / screen-reader label on the verified tick next to your name. */
   verifiedLabel: string
   email: string
+  /** Where "Book a call" sends people. */
+  bookingUrl: string
   location: string
   /** Three short proof facts shown on phones under the Home lede. */
   stats: Stat[]
@@ -46,31 +46,32 @@ export type Profile = {
 }
 
 export const profile: Profile = {
-  name: 'Your Name',
-  firstName: 'Your Name',
-  handle: '@yourhandle',
-  role: 'PLACEHOLDER - your title',
-  avatarSrc: '/avatar.svg',
-  verifiedLabel: 'PLACEHOLDER - what the tick means (e.g. a certification)',
-  email: 'you@example.com',
-  location: 'PLACEHOLDER - your city or timezone',
+  name: 'Jude Blase',
+  firstName: 'Jude',
+  handle: '@heyjudeblase',
+  role: 'Web Developer & GHL Automation Specialist',
+  avatarSrc: '/me/avatar.jpg',
+  verifiedLabel: 'Six Sigma White Belt certified',
+  email: 'jodelsongcuan.work@gmail.com',
+  bookingUrl: 'https://api.leadconnectorhq.com/widget/bookings/meet-with-jude',
+  location: 'Philippines · GMT+8',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
-    { value: '0 yrs', label: 'PLACEHOLDER', Icon: Briefcase },
-    { value: '#000', label: 'PLACEHOLDER', Icon: SealCheck },
-    { value: 'GMT+0', label: 'PLACEHOLDER', Icon: Clock },
+    { value: '4+ yrs', label: 'Experience', Icon: Briefcase },
+    { value: '40+', label: 'Clients', Icon: UsersThree },
+    { value: 'GMT+8', label: 'Timezone', Icon: Clock },
   ],
   // The intro types this line, then flies it into the Home headline.
   // Keep it short: two halves, 5-8 words total.
-  displayName: { line1: 'Your headline here.', line2: 'Keep it short.' },
+  displayName: { line1: 'Systems that work.', line2: "Even when you don't." },
   hero: {
-    body: 'PLACEHOLDER - one line on what you do and who you do it for.',
-    portraitSrc: '/avatar.svg',
-    portraitAlt: 'Portrait placeholder',
+    body: 'I help business owners grow through smarter websites, funnels, and automations, so you can focus on scaling, not stressing.',
+    portraitSrc: '/me/portrait.jpg',
+    portraitAlt: 'Jude Blase at HighLevel Live Manila',
   },
   socials: [
-    { label: 'Facebook profile', href: '#', iconPath: '/icons/facebook.svg' },
-    { label: 'LinkedIn profile', href: '#', iconPath: '/icons/linkedin.svg' },
-    { label: 'Discord profile', href: '#', iconPath: '/icons/discord.svg' },
+    { label: 'Facebook profile', href: 'https://www.facebook.com/heyjudeblase/', iconPath: '/icons/facebook.svg' },
+    { label: 'Instagram profile', href: 'https://www.instagram.com/heyjudeblase/', iconPath: '/icons/instagram.svg' },
+    { label: 'LinkedIn profile', href: 'https://www.linkedin.com/in/jodelsongcuan/', iconPath: '/icons/linkedin.svg' },
   ],
 }

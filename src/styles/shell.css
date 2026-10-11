@@ -128,16 +128,16 @@
    reading --navy / --muted / --white and resolves to the LIGHT values while the
    rest of the page stays dark. One block instead of twenty overrides. */
 [data-theme='dark'] .tools-marquee {
-  --navy: #0B1E3F;
-  --navy-ink: #060C1A;
-  --muted: #5A6479;
+  --navy: #151515;
+  --navy-ink: #0A0A0A;
+  --muted: #5E5B54;
   --white: #FFFFFF;
-  --cream: #F4F4ED;
-  --paper: #FBFBF7;
-  --line: rgba(11, 30, 63, 0.14);
-  --line-strong: rgba(11, 30, 63, 0.28);
-  --divider: rgba(11, 30, 63, 0.12);
-  --tint: rgba(11, 30, 63, 0.05);
-  --tint-strong: rgba(11, 30, 63, 0.09);
-  --orange-ink: #B4490A;
+  --cream: #F5F3ED;
+  --paper: #FBFAF6;
+  --line: rgba(21, 21, 21, 0.14);
+  --line-strong: rgba(21, 21, 21, 0.28);
+  --divider: rgba(21, 21, 21, 0.12);
+  --tint: rgba(21, 21, 21, 0.05);
+  --tint-strong: rgba(21, 21, 21, 0.09);
+  --orange-ink: #4A6610;
 }

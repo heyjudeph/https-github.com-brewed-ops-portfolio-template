@@ -38,8 +38,8 @@
   text-decoration: none;
   border: 1px solid var(--line-strong);
   box-shadow:
-    0 1px 2px rgba(6, 12, 26, 0.04),
-    0 24px 50px -36px rgba(6, 12, 26, 0.45);
+    0 1px 2px rgba(10, 10, 10, 0.04),
+    0 24px 50px -36px rgba(10, 10, 10, 0.45);
   transition:
     transform var(--dur-med) var(--ease-spring),
     box-shadow var(--dur-med) var(--ease-out);
@@ -48,8 +48,8 @@
   transform: translateY(-3px);
   border-color: var(--orange);
   box-shadow:
-    0 1px 2px rgba(6, 12, 26, 0.05),
-    0 32px 60px -34px rgba(6, 12, 26, 0.55);
+    0 1px 2px rgba(10, 10, 10, 0.05),
+    0 32px 60px -34px rgba(10, 10, 10, 0.55);
 }
 .bento__card:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 
@@ -78,8 +78,8 @@
   height: 36px;
   border-radius: 11px;
   background: var(--orange);
-  color: var(--white);
-  box-shadow: 0 8px 18px -10px rgba(255, 122, 26, 0.9);
+  color: var(--on-accent);
+  box-shadow: 0 8px 18px -10px rgba(199, 243, 107, 0.9);
   transition: transform var(--dur-med) var(--ease-spring);
 }
 .bento__card:hover .bento__icon { transform: translateY(-2px) rotate(-4deg); }
@@ -103,7 +103,7 @@
   position: absolute;
   top: 2px;
   right: 0;
-  color: var(--orange);
+  color: var(--orange-ink);
   opacity: 0;
   transform: translate(-4px, 4px);
   transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-med) var(--ease-spring);
@@ -147,7 +147,7 @@
   overflow: hidden;
   position: relative;
   background: var(--white);
-  box-shadow: inset 0 0 0 1px var(--line), 0 10px 24px -16px rgba(6, 12, 26, 0.6);
+  box-shadow: inset 0 0 0 1px var(--line), 0 10px 24px -16px rgba(10, 10, 10, 0.6);
 }
 .bento__shot::before {
   content: '';
@@ -183,7 +183,7 @@
   border-radius: 12px;
   overflow: hidden;
   background: var(--plate);
-  box-shadow: 0 0 0 3px var(--white), 0 14px 30px -14px rgba(6, 12, 26, 0.6);
+  box-shadow: 0 0 0 3px var(--white), 0 14px 30px -14px rgba(10, 10, 10, 0.6);
   transform: rotate(calc((var(--i) - 1) * 9deg)) translateX(calc((var(--i) - 1) * 26px));
   transition: transform var(--dur-slow) var(--ease-spring);
 }
@@ -226,7 +226,7 @@
   color: var(--navy);
   box-shadow: inset 0 0 0 1px var(--line);
 }
-.bento__chip svg { color: var(--orange); flex: none; }
+.bento__chip svg { color: var(--orange-ink); flex: none; }
 /* Status as n8n-ish dot: green for live, muted for internal. */
 .bento__chip[data-status]::after {
   content: '';
@@ -257,7 +257,7 @@
   height: clamp(76px, 6.4vw, 104px);
   border-radius: 50%;
   background: var(--white);
-  box-shadow: inset 0 0 0 1px var(--line), 0 0 0 8px var(--tint), 0 16px 30px -18px rgba(6, 12, 26, 0.6);
+  box-shadow: inset 0 0 0 1px var(--line), 0 0 0 8px var(--tint), 0 16px 30px -18px rgba(10, 10, 10, 0.6);
   transition: transform var(--dur-slow) var(--ease-spring);
 }
 .bento__badge-ring img { width: 66%; height: 66%; object-fit: contain; }
@@ -312,7 +312,7 @@
   height: clamp(18px, 14cqh, 28px);
   border-radius: clamp(6px, 4.5cqh, 9px);
   background: color-mix(in srgb, var(--orange) 12%, transparent);
-  color: var(--orange);
+  color: var(--orange-ink);
   transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
 }
 .bento__offer-tile svg { width: clamp(11px, 7.5cqh, 15px); height: clamp(11px, 7.5cqh, 15px); }
@@ -353,7 +353,7 @@
   .bento__offer-note { display: block; }
 }
 .bento__card:hover .bento__offer { transform: translateX(3px); }
-.bento__card:hover .bento__offer-tile { background: var(--orange); color: var(--white); }
+.bento__card:hover .bento__offer-tile { background: var(--orange); color: var(--on-accent); }
 .bento__card:hover .bento__offer-num { color: var(--orange-ink); }
 
 /* Testimonials: head left, review column drifting up on the right. */
@@ -384,7 +384,7 @@
 }
 .bento__review-top { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--navy); }
 .bento__review-top img { width: 18px; height: 18px; border-radius: 5px; object-fit: contain; }
-.bento__review-top svg { color: var(--orange); }
+.bento__review-top svg { color: var(--orange-ink); }
 .bento__review-role { font-size: 11.5px; line-height: 1.4; color: var(--muted); }
 .bento__review-work { font-size: 11px; font-weight: 600; color: var(--orange-ink); }
 
