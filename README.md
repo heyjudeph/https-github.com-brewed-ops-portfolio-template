@@ -26,10 +26,9 @@ npm run lint       # ESLint with the TypeScript parser and the React hooks rules
 | Services, the wagi formula, the automation demo copy | `src/components/ServicesGrid.tsx`, `src/components/Autopilot.tsx` |
 | About page copy and tool marks | `src/components/AboutGrid.tsx` |
 | Tools strip | `src/components/ToolsMarquee.tsx` (logos in `public/icons/` and `public/icons/tools/`) |
-| Photos and the credential seal | `public/me/` |
+| Photos and the Six Sigma badge | `public/me/` |
 | SEO and share tags | `index.html` |
 | Colors | `src/styles/tokens.css` (the token names are the template's: `--navy` is the ink, `--orange` is the lime accent) |
-| Privacy / Terms | `src/components/Privacy.tsx`, `src/components/ToS.tsx` (still template placeholders) |
 
 ### Adding a website or landing page
 
@@ -55,7 +54,7 @@ The videos play through Google Drive's embedded player. Each file must stay shar
 
 - Template: [brewed-ops/portfolio-template](https://github.com/brewed-ops/portfolio-template) by BrewedOps.
 - Contour background technique inspired by the landonorris.com site by OFF+BRAND. The simplex noise is Ashima Arts / Ian McEwan (MIT).
-- Icons: [Phosphor](https://phosphoricons.com) (MIT). Tool logos from [Simple Icons](https://simpleicons.org) (CC0), [SVG Logos](https://github.com/gilbarbara/logos) (CC0) and [Devicon](https://devicon.dev) (MIT); they are trademarks of their owners. Kajabi, BudHerd and MasterControl are letter tiles until real logos are added.
+- Icons: [Phosphor](https://phosphoricons.com) (MIT). Tool logos from [Simple Icons](https://simpleicons.org) (CC0), [SVG Logos](https://github.com/gilbarbara/logos) (CC0) and [Devicon](https://devicon.dev) (MIT); they are trademarks of their owners. Kajabi, BugHerd and MasterControl are letter tiles until real logos are added.
 - Font: Poppins (SIL Open Font License).
 
 ## License

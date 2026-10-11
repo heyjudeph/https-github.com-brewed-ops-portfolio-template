@@ -129,7 +129,7 @@ export default function HomeBento() {
         <CardHead Icon={Medal} title="Credentials" desc="Six Sigma White Belt and a BS in Information Technology." />
         <div className="bento__media bento__badge" aria-hidden="true">
           <span className="bento__badge-ring">
-            <img src="/me/six-sigma-white-belt.svg" alt="" width={72} height={72} />
+            <img src="/me/six-sigma-white-belt.jpg" alt="" width={72} height={72} />
           </span>
           <span className="bento__badge-tag">
             <SealCheck size={14} weight="fill" />

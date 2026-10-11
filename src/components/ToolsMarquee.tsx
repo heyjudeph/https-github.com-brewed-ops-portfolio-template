@@ -55,7 +55,7 @@ export const tools: Tool[] = [
   { name: 'Slack',                iconPath: '/icons/slack.svg',             color: '#611F69' },
   { name: 'ChatGPT',              iconPath: '/icons/openai.svg',            color: '#151515' },
   { name: 'Claude',               iconPath: '/icons/ai/claude-color.svg' },
-  { name: 'BudHerd',              iconPath: '/icons/tools/budherd.svg' },
+  { name: 'BugHerd',              iconPath: '/icons/tools/bugherd.svg' },
   { name: 'MasterControl',        iconPath: '/icons/tools/mastercontrol.svg' },
 ]
 

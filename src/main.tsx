@@ -13,8 +13,6 @@ const ServicesView = lazy(() => import('@/views/ServicesView'))
 const TestimonialsGrid = lazy(() => import('@/components/TestimonialsGrid'))
 const AboutGrid = lazy(() => import('@/components/AboutGrid'))
 const ContactGrid = lazy(() => import('@/components/ContactGrid'))
-const Privacy = lazy(() => import('@/components/Privacy'))
-const ToS = lazy(() => import('@/components/ToS'))
 const ThankYou = lazy(() => import('@/components/ThankYou'))
 import './styles/tokens.css'
 import './styles/global.css'
@@ -70,8 +68,6 @@ createRoot(container).render(
           <Route path="/contact" element={<ContactGrid />} />
         </Route>
         {/* Standalone pages: their own layout, no rail, document scroll. */}
-        <Route path="/privacy" element={<Suspense fallback={null}><Privacy /></Suspense>} />
-        <Route path="/terms" element={<Suspense fallback={null}><ToS /></Suspense>} />
         <Route path="/thank-you" element={<Suspense fallback={null}><ThankYou /></Suspense>} />
         <Route path="*" element={<NotFound />} />
       </Routes>

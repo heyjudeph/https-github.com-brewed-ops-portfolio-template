@@ -5137,10 +5137,9 @@ img.about__stat-badge {
 }
 
 /* ==========================================================================
-   LEGAL PAGES (Privacy, Terms of Service)
-   Routed pages at /privacy and /terms. Cream paper background, navy
-   serif-ish typography, single-column readable card. Brand-matched but
-   restrained - this is documentation, not a marketing surface.
+   STANDALONE PAGES (the 404)
+   Cream paper background, navy typography, single-column readable card.
+   Brand-matched but restrained - this is not a marketing surface.
    ========================================================================== */
 .legal-page {
   min-height: 100dvh;

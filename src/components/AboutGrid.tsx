@@ -110,7 +110,7 @@ export default function AboutGrid() {
           <div className="agrid__bar">
             <span className="agrid__cell">
               <span className="agrid__cell-mark agrid__cell-mark--img">
-                <img src="/me/six-sigma-white-belt.svg" alt="" loading="lazy" decoding="async" />
+                <img src="/me/six-sigma-white-belt.jpg" alt="" loading="lazy" decoding="async" />
               </span>
               <span className="agrid__cell-copy">
                 <span className="agrid__cell-title">Six Sigma White Belt</span>

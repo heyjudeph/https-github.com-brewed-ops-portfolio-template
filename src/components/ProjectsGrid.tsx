@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import { ArrowUpRight, X, CursorClick, CalendarCheck } from '@/components/slab'
 import { GlobeIcon } from './ProjectIcons'
 import { SitePanel, BarrelPanel } from './ProjectPanels'
-import { websiteFunnel, allPages, type Funnel } from '@/data/funnels'
+import { websiteFunnel, landingPages, allPages, type Funnel } from '@/data/funnels'
 import { profile } from '@/data/profile'
 
 /**
@@ -39,11 +39,13 @@ function sitePreview(site: Funnel) {
   }
 }
 
-/** The pages fanned like cards. */
+/** The landing pages fanned like cards, topped up with sites to make three. */
+const FAN = [...landingPages, ...websiteFunnel].slice(0, 3)
+
 function PagesPreview() {
   return (
     <div className="bento__media bento__fan" aria-hidden="true">
-      {allPages.slice(0, 3).map((f, i) => (
+      {FAN.map((f, i) => (
         <span key={f.file} className="bento__photo bento__photo--page" style={{ ['--i' as string]: i }}>
           <img src={thumbSrc(f)} alt="" loading="lazy" decoding="async" />
         </span>
@@ -67,8 +69,8 @@ const PROJECTS: Project[] = [
   ...SITE_CARDS,
   {
     id: 'pages',
-    title: 'Every page, in 3D',
-    desc: 'All the websites and landing pages on one spinning carousel. Click any page to open it.',
+    title: 'Landing pages, in 3D',
+    desc: `Webinar and booking pages built to capture and convert, with every site on one spinning carousel. ${allPages.length} pages. Click any to open it.`,
     span: 2,
     Section: BarrelPanel,
     Preview: PagesPreview,

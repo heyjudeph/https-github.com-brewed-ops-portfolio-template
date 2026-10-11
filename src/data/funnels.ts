@@ -56,12 +56,33 @@ export const websiteFunnel: Funnel[] = [
   ),
 ]
 
-/**
- * Landing pages. Add an entry per page once its screenshots are in place:
- *   https://uplevelcommunication.com/webinar
- *   https://3secondmedia.com/dwy-marketing-partnership-page
- */
-export const landingPages: Funnel[] = []
+/** Landing pages: single-purpose pages built to capture or book. */
+const page = (slug: string, label: string, tag: FunnelTag, url: string, desc: string): Funnel => ({
+  file: `${slug}.html`,
+  label,
+  tag,
+  desc,
+  dir: 'samples',
+  url,
+  shot: `/work/${slug}.jpg`,
+})
+
+export const landingPages: Funnel[] = [
+  page(
+    'uplevel-webinar',
+    'Uplevel Communication Webinar',
+    'Lead Capture',
+    'https://uplevelcommunication.com/webinar',
+    'Webinar registration page for a free live training on executive presence, built to fill seats.',
+  ),
+  page(
+    '3-second-media-dwy',
+    '3 Second Media DWY Partnership',
+    'Booking',
+    'https://3secondmedia.com/dwy-marketing-partnership-page',
+    'Done-with-you marketing partnership page with an embedded calendar, built to book qualified discovery calls.',
+  ),
+]
 
 /** Everything the 3D carousel spins. */
 export const allPages: Funnel[] = [...websiteFunnel, ...landingPages]
