@@ -414,8 +414,12 @@ iframe.tgrid__video {
 .tgrid__pick-thumb--icon {
   display: grid;
   place-items: center;
+  width: 30px;
+  height: 30px;
   color: var(--orange-ink);
 }
+/* Three or more clips share the plate: tighter cells so the label fits. */
+.tgrid__picker .tgrid__pick { gap: 8px; padding: 9px 10px; justify-content: center; }
 .tgrid__brands {
   display: flex;
   flex-wrap: wrap;

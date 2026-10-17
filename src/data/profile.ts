@@ -53,7 +53,7 @@ export const profile: Profile = {
   avatarSrc: '/me/avatar.jpg',
   verifiedLabel: 'Six Sigma White Belt certified',
   email: 'jodelsongcuan.work@gmail.com',
-  bookingUrl: 'https://api.leadconnectorhq.com/widget/bookings/meet-with-jude',
+  bookingUrl: 'https://calendar.app.google/aLxrwMjKkLDGiTBV7',
   location: 'Philippines · GMT+8',
   // Pick any icon from https://phosphoricons.com and import it above.
   stats: [
@@ -67,7 +67,7 @@ export const profile: Profile = {
   hero: {
     body: 'I help business owners grow through smarter websites, funnels, and automations, so you can focus on scaling, not stressing.',
     portraitSrc: '/me/portrait.jpg',
-    portraitAlt: 'Jude Blase at HighLevel Live Manila',
+    portraitAlt: 'Portrait of Jude Blase',
   },
   socials: [
     { label: 'Facebook profile', href: 'https://www.facebook.com/heyjudeblase/', iconPath: '/icons/facebook.svg' },

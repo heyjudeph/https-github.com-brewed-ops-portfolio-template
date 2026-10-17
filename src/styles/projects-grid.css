@@ -613,7 +613,10 @@
   background: var(--panel-dark);
   color: #F5F3ED;
 }
-.bento__card--cta .bento__title { color: #F5F3ED; }
+/* Doubled class: apple.css inks every hovered title obsidian, which would
+   vanish on this plate. */
+.bento__card.bento__card--cta .bento__title,
+.bento__card.bento__card--cta:hover .bento__title { color: #F5F3ED; }
 .bento__card--cta .bento__desc { color: rgba(245, 243, 237, 0.7); }
 .bento__card--cta .bento__icon { background: var(--orange); color: #151515; }
 .bento__card--cta .bento__arrow { color: var(--orange-ink); }

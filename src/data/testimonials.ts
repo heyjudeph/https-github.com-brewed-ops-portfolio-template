@@ -47,6 +47,7 @@ export type VideoTestimonial = {
 export const VIDEOS: VideoTestimonial[] = [
   { driveId: '1N9OGHmcDL3BkW5dBFruldrvh3Ly2PW6J', title: 'Client video testimonial 1' },
   { driveId: '1e2Y1mniUPMtTCn3i6hvuoQV5wX-m8JtN', title: 'Client video testimonial 2' },
+  { driveId: '1NmaWF7J6yuUanOJ-A7bnIfIESO0QGBCs', title: 'Client video testimonial 3' },
 ]
 
 /** Drive's embeddable player for a shared file. */
