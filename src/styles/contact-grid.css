@@ -416,31 +416,80 @@
   .cgrid__hint { font-size: 12.5px; }
 }
 
-/* ---------- Booking calendar ----------
-   The calendar widget fills the panel; a quiet link below it opens the same
-   page in a new tab for browsers that block the embed. */
-.cgrid__panel--booking {
+/* ---------- Booking card ----------
+   The right panel: what the call is for, then one button out to the
+   calendar. */
+.cgrid__panel--booking { align-items: center; justify-content: center; }
+.cgrid__book {
+  display: flex;
   flex-direction: column;
-  overflow: hidden;
-  background: #FFFFFF;
-}
-.cgrid__booking {
-  flex: 1 1 auto;
+  align-items: flex-start;
+  gap: clamp(10px, 1.6vh, 16px);
   width: 100%;
-  min-height: 560px;
-  border: 0;
-  display: block;
+  max-width: 520px;
+  padding: clamp(24px, 4vh, 48px) clamp(20px, 2.4vw, 40px);
 }
-.cgrid__booking-out {
+.cgrid__book-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--orange);
+  color: var(--on-accent);
+}
+.cgrid__book-eyebrow {
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--orange-ink);
+}
+.cgrid__book-title {
+  margin: 0;
+  font-size: clamp(24px, 2vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--navy);
+}
+.cgrid__book-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 4px 0 6px;
+  padding: 0;
+  list-style: none;
+}
+.cgrid__book-step {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.cgrid__book-num {
+  padding-top: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--orange-ink);
+}
+.cgrid__book-btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 10px 16px;
-  border-top: 1px solid rgba(21, 21, 21, 0.1);
-  font-size: 12.5px;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: var(--radius-pill);
+  background: var(--orange);
+  color: var(--on-accent);
+  font-family: var(--font-display);
+  font-size: 16px;
   font-weight: 600;
-  color: #151515;
   text-decoration: none;
+  transition: background var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
 }
-.cgrid__booking-out:hover { text-decoration: underline; }
+.cgrid__book-btn:hover { background: var(--orange-hover); transform: translateY(-1px); }
+.cgrid__book-btn:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+.cgrid__book-note { font-size: 12.5px; color: var(--muted); }

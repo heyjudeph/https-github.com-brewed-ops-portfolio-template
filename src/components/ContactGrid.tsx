@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { EnvelopeSimple, ArrowUpRight, CaretDown } from '@/components/slab'
+import { EnvelopeSimple, ArrowUpRight, CaretDown, CalendarCheck } from '@/components/slab'
 import { FAQS } from '@/data/faqs'
 import { profile } from '@/data/profile'
 
@@ -8,9 +8,18 @@ import { profile } from '@/data/profile'
  *
  * One glass sheet, two columns: the questions people ask before they book on
  * the left, on a dark plate (one open at a time, the list scrolls), and the
- * booking calendar itself on the right. Sized to the panel, so nothing here
- * scrolls; the calendar takes whatever height is left.
+ * booking card on the right. Sized to the panel, so nothing here scrolls.
+ *
+ * The calendar is a Google appointment page opened in a new tab rather than
+ * framed in: a page that refuses to be framed leaves an empty box behind.
  */
+
+/** What a visitor gets from the call, in order. */
+const CALL_STEPS = [
+  'Tell me about your business, your tools and your offer.',
+  'We find where leads leak and where time gets wasted.',
+  'You leave with a plan built on the wagi formula: audit, automate, accelerate.',
+]
 
 export default function ContactGrid() {
   // One question open at a time so the plate never grows past the calendar.
@@ -81,18 +90,28 @@ export default function ContactGrid() {
           </div>
         </aside>
 
-        {/* Right: the booking calendar. */}
+        {/* Right: the booking card. */}
         <div className="cgrid__panel cgrid__panel--booking">
-          <iframe
-            className="cgrid__booking"
-            src={profile.bookingUrl}
-            title={`Book a call with ${profile.firstName}`}
-            loading="lazy"
-          />
-          <a className="cgrid__booking-out" href={profile.bookingUrl} target="_blank" rel="noopener noreferrer">
-            Calendar not loading? Open it in a new tab
-            <ArrowUpRight size={14} weight="bold" aria-hidden="true" />
-          </a>
+          <div className="cgrid__book">
+            <span className="cgrid__book-mark" aria-hidden="true">
+              <CalendarCheck size={26} weight="fill" />
+            </span>
+            <span className="cgrid__book-eyebrow">Book a call</span>
+            <h2 className="cgrid__book-title">Pick a time that works for you.</h2>
+            <ol className="cgrid__book-steps" role="list">
+              {CALL_STEPS.map((step, i) => (
+                <li key={step} className="cgrid__book-step">
+                  <span className="cgrid__book-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+            <a className="cgrid__book-btn" href={profile.bookingUrl} target="_blank" rel="noopener noreferrer">
+              Open my calendar
+              <ArrowUpRight size={16} weight="bold" aria-hidden="true" />
+            </a>
+            <span className="cgrid__book-note">Opens Google Calendar in a new tab.</span>
+          </div>
         </div>
       </div>
     </section>

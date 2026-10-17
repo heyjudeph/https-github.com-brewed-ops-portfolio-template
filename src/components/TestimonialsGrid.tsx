@@ -7,8 +7,8 @@ import { TESTIMONIALS, VIDEOS, CLIENTS, driveEmbed } from '@/data/testimonials'
  *
  * Two columns inside one glass sheet: the video proof on the left, the
  * written testimonials on the right. The page is sized to the panel and does
- * not scroll, so both clips share ONE stage and a picker switches between
- * them rather than stacking two players down a column that would never fit.
+ * not scroll, so every clip shares ONE stage and a picker switches between
+ * them rather than stacking players down a column that would never fit.
  *
  * The clips are Google Drive files played through Drive's own embed, so the
  * stage is ONE fixed plate each player sits inside. Content lives in
@@ -38,7 +38,7 @@ export default function TestimonialsGrid() {
       </header>
 
       <div className="home__glass tgrid__glass">
-        {/* Left: one stage, two clips. */}
+        {/* Left: one stage, every clip. */}
         <div className="tgrid__reel">
           <div className="tgrid__stage">
             {/* Re-keyed so switching clips mounts a fresh player. */}
@@ -55,7 +55,12 @@ export default function TestimonialsGrid() {
 
           {/* The picker is one segmented control, not loose chips: cells on a
               shared plate, the active one lit. */}
-          <div className="tgrid__picker" role="group" aria-label="Choose a video testimonial">
+          <div
+            className="tgrid__picker"
+            role="group"
+            aria-label="Choose a video testimonial"
+            style={{ gridTemplateColumns: `repeat(${VIDEOS.length}, minmax(0, 1fr))` }}
+          >
             {VIDEOS.map((c, i) => (
               <button
                 key={c.driveId}
@@ -63,13 +68,13 @@ export default function TestimonialsGrid() {
                 className={`tgrid__pick${i === active ? ' is-active' : ''}`}
                 onClick={() => setActive(i)}
                 aria-pressed={i === active}
+                aria-label={`Play ${c.title}`}
               >
                 <span className="tgrid__pick-thumb tgrid__pick-thumb--icon" aria-hidden="true">
                   <Play size={16} weight="fill" />
                 </span>
                 <span className="tgrid__pick-copy">
-                  <span className="tgrid__pick-kicker">Video {String(i + 1).padStart(2, '0')}</span>
-                  <span className="tgrid__pick-meta">Client testimonial</span>
+                  <span className="tgrid__pick-kicker">Video {i + 1}</span>
                 </span>
               </button>
             ))}
